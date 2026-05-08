@@ -6,13 +6,13 @@
 <title>Rock Oak Food Trucks</title>
 <meta http-equiv="refresh" content="900">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: #1a1d26;
-    color: #e8e8e8;
+    background: #ffffff;
+    color: #1a1d26;
     font-family: 'Inter', -apple-system, sans-serif;
     height: 100vh;
     overflow: hidden;
@@ -22,67 +22,69 @@
 
   .mobile-view { display: none; }
 
-  /* ── HEADER ── */
+  /* ── HEADER (centered title, large) ── */
   .header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     padding: 18px 40px 14px;
-    border-bottom: 2px solid #2a2d38;
-  }
-  .header-center { text-align: center; }
-  .last-synced {
-    font-size: 18px;
-    font-weight: 600;
-    color: #b0b4c8;
-    margin-top: 4px;
+    border-bottom: 2px solid #d5d8e0;
+    gap: 20px;
   }
   .header-left {
     display: flex;
     align-items: center;
-    gap: 22px;
-    flex-wrap: wrap;
+    gap: 16px;
+    justify-self: start;
   }
   .header .logo {
-    height: 64px;
+    height: 80px;
     width: auto;
     display: block;
-    opacity: 0.95;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
   }
-  .header .title-block {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  .header-center {
+    text-align: center;
+    justify-self: center;
   }
   .header h1 {
-    font-size: 42px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    color: #fff;
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #1a1d26;
     line-height: 1;
+    white-space: nowrap;
   }
   .header .subtitle {
-    font-size: 14px;
-    color: #7a7e94;
+    font-size: 16px;
+    color: #6b7280;
     font-weight: 500;
-    max-width: 360px;
-    line-height: 1.3;
+    margin-top: 6px;
+  }
+  .header-right {
+    text-align: right;
+    justify-self: end;
   }
   .header .week-label {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 800;
-    color: #fff;
+    color: #1a1d26;
     letter-spacing: -0.3px;
+  }
+  .header .last-synced {
+    font-size: 16px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-top: 4px;
   }
 
   /* ── LEGEND ── */
   .legend {
     display: flex;
     gap: 22px;
-    padding: 10px 40px;
-    border-bottom: 1px solid #252830;
-    background: #1e2129;
+    padding: 12px 40px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
     flex-wrap: wrap;
     overflow-y: auto;
     max-height: 90px;
@@ -91,18 +93,18 @@
     display: flex;
     align-items: center;
     gap: 9px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
-    color: #c0c4d6;
+    color: #1f2937;
   }
   .legend-dot {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border-radius: 4px;
   }
   .legend-empty {
-    font-size: 14px;
-    color: #5a5e72;
+    font-size: 15px;
+    color: #6b7280;
     font-weight: 600;
   }
 
@@ -110,14 +112,14 @@
   .status-bar {
     display: none;
     padding: 8px 40px;
-    background: #1a1520;
-    border-bottom: 1px solid #2a2030;
+    background: #fef2f2;
+    border-bottom: 1px solid #fecaca;
     font-size: 14px;
-    color: #e07070;
+    color: #b91c1c;
     font-weight: 600;
   }
   .status-bar.visible { display: block; }
-  .status-bar.ok { color: #3ecfb4; background: #141d1a; border-color: #1c2d28; }
+  .status-bar.ok { color: #047857; background: #ecfdf5; border-color: #a7f3d0; }
 
   /* ── CALENDAR GRID ── */
   .calendar {
@@ -127,6 +129,7 @@
     gap: 0;
     padding: 0 20px 20px;
     overflow: hidden;
+    background: #fff;
   }
 
   /* Day headers */
@@ -135,36 +138,36 @@
     padding: 14px 6px 12px;
     font-weight: 700;
     font-size: 18px;
-    color: #7b7f96;
+    color: #6b7280;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 2px solid #3a3d4a;
-    border-left: 2px solid #3a3d4a;
+    border-bottom: 2px solid #d5d8e0;
+    border-left: 2px solid #d5d8e0;
   }
   .day-header.today {
-    color: #3ecfb4;
-    border-bottom-color: #3ecfb4;
-    background: rgba(62, 207, 180, 0.10);
+    color: #0d9488;
+    border-bottom-color: #0d9488;
+    background: rgba(20, 184, 166, 0.10);
   }
   .day-header .date-num {
     display: block;
     font-size: 32px;
     font-weight: 800;
     margin-top: 2px;
-    color: #b0b4c8;
+    color: #374151;
   }
-  .day-header.today .date-num { color: #3ecfb4; }
-  .time-header { border-bottom: 2px solid #3a3d4a; }
+  .day-header.today .date-num { color: #0d9488; }
+  .time-header { border-bottom: 2px solid #d5d8e0; }
 
   /* Day columns */
   .day-column {
     position: relative;
-    border-left: 2px solid #3a3d4a;
+    border-left: 2px solid #d5d8e0;
     min-height: 0;
   }
   .day-column.today-col {
-    background: rgba(62, 207, 180, 0.06);
-    box-shadow: inset 0 0 0 1px rgba(62, 207, 180, 0.25);
+    background: rgba(20, 184, 166, 0.06);
+    box-shadow: inset 0 0 0 1px rgba(20, 184, 166, 0.30);
   }
 
   .time-labels { position: relative; }
@@ -173,17 +176,17 @@
     right: 10px;
     font-size: 14px;
     font-weight: 600;
-    color: #5a5e72;
+    color: #9ca3af;
     transform: translateY(-50%);
   }
   .day-column .hour-line-marker {
     position: absolute;
     left: 0;
     right: 0;
-    border-top: 1px solid #2a2d38;
+    border-top: 1px solid #f0f1f4;
   }
 
-  /* Event blocks — colored per-vendor (background/border set inline by JS) */
+  /* Event blocks — solid saturated colors with white text (per-vendor in JS) */
   .event {
     position: absolute;
     border-radius: 8px;
@@ -192,10 +195,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-weight: 600;
+    font-weight: 700;
     border-left-width: 6px;
     border-left-style: solid;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     color: #fff;
   }
   .event .client-name {
@@ -211,28 +214,16 @@
   .event .time-range {
     font-size: 22px;
     font-weight: 700;
-    opacity: 0.92;
+    opacity: 0.95;
     margin-top: 3px;
   }
-  .event .space-name {
-    font-size: 15px;
-    font-weight: 500;
-    opacity: 0.65;
-    margin-top: 2px;
-  }
 
-  .event.compact {
-    padding: 4px 10px;
-  }
+  .event.compact { padding: 4px 10px; }
   .event.compact .client-name {
     font-size: 22px;
     -webkit-line-clamp: 2;
   }
-  .event.compact .time-range {
-    font-size: 16px;
-    margin-top: 1px;
-  }
-  .event.compact .space-name { display: none; }
+  .event.compact .time-range { font-size: 16px; margin-top: 1px; }
 
   .event.narrow .client-name { font-size: 22px; }
   .event.narrow .time-range { font-size: 17px; }
@@ -244,9 +235,9 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: #3ecfb4;
+    background: #0d9488;
     z-index: 10;
-    box-shadow: 0 0 8px rgba(62, 207, 180, 0.55);
+    box-shadow: 0 0 8px rgba(13, 148, 136, 0.45);
   }
   .now-dot {
     position: absolute;
@@ -255,7 +246,7 @@
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background: #3ecfb4;
+    background: #0d9488;
   }
 
   /* ── FOOTER ── */
@@ -264,10 +255,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    border-top: 1px solid #252830;
-    background: #1e2129;
+    border-top: 1px solid #e5e7eb;
+    background: #f9fafb;
     font-size: 14px;
-    color: #5a5e72;
+    color: #6b7280;
   }
 
   .empty-day {
@@ -276,14 +267,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 14px;
-    color: #2a2d3a;
+    color: #d1d5db;
     font-weight: 600;
   }
 
   .loading-overlay {
     position: fixed;
     inset: 0;
-    background: #1a1d26;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -293,7 +284,7 @@
   .loading-overlay.hidden { opacity: 0; pointer-events: none; }
   .loading-text {
     font-size: 20px;
-    color: #7b7f96;
+    color: #6b7280;
     font-weight: 600;
   }
 
@@ -301,38 +292,41 @@
     body { height: auto; overflow: auto; -webkit-overflow-scrolling: touch; }
     .calendar, .legend { display: none !important; }
     .mobile-view { display: block !important; }
-    .header { flex-direction: column; align-items: flex-start; padding: 16px 20px 12px; gap: 10px; }
-    .header-left { gap: 14px; }
-    .header .logo { height: 44px; }
-    .header h1 { font-size: 22px; }
-    .header .subtitle { font-size: 12px; max-width: none; }
+    .header {
+      grid-template-columns: 1fr;
+      align-items: flex-start;
+      padding: 16px 20px 12px;
+      gap: 8px;
+    }
+    .header-left, .header-center, .header-right { justify-self: start; text-align: left; }
+    .header .logo { height: 50px; }
+    .header h1 { font-size: 32px; white-space: normal; letter-spacing: -1px; }
+    .header .subtitle { font-size: 13px; }
     .header .week-label { font-size: 20px; }
-    .last-synced { font-size: 13px; }
-    .header-center { text-align: left; }
+    .header .last-synced { font-size: 13px; }
     .footer { padding: 10px 20px; font-size: 13px; }
     .mobile-view { flex: 1; overflow-y: auto; padding: 0 16px 20px; }
     .m-day { margin-top: 16px; }
     .m-day-header {
       display: flex; align-items: baseline; gap: 10px;
-      padding: 10px 0 8px; border-bottom: 2px solid #2a2d38;
+      padding: 10px 0 8px; border-bottom: 2px solid #e5e7eb;
     }
-    .m-day-name { font-size: 14px; font-weight: 700; color: #7b7f96; text-transform: uppercase; letter-spacing: 1px; }
-    .m-day-date { font-size: 20px; font-weight: 800; color: #b0b4c8; }
-    .m-day.m-today .m-day-name, .m-day.m-today .m-day-date { color: #3ecfb4; }
-    .m-day.m-today .m-day-header { border-bottom-color: #3ecfb4; }
-    .m-no-events { padding: 12px 0; font-size: 14px; color: #3a3d4a; font-weight: 600; }
+    .m-day-name { font-size: 14px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; }
+    .m-day-date { font-size: 20px; font-weight: 800; color: #1a1d26; }
+    .m-day.m-today .m-day-name, .m-day.m-today .m-day-date { color: #0d9488; }
+    .m-day.m-today .m-day-header { border-bottom-color: #0d9488; }
+    .m-no-events { padding: 12px 0; font-size: 14px; color: #d1d5db; font-weight: 600; }
     .m-event {
       display: flex; align-items: center; gap: 14px;
       padding: 12px 14px; margin-top: 8px;
       border-radius: 10px;
       border-left-width: 5px; border-left-style: solid;
       color: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
     }
     .m-event .m-event-info { flex: 1; min-width: 0; }
     .m-event .m-client { font-size: 18px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .m-event .m-time { font-size: 15px; font-weight: 700; opacity: 0.85; margin-top: 2px; }
-    .m-event .m-space { font-size: 12px; font-weight: 500; opacity: 0.6; margin-top: 1px; }
+    .m-event .m-time { font-size: 15px; font-weight: 700; opacity: 0.95; margin-top: 2px; }
   }
 </style>
 </head>
@@ -345,16 +339,15 @@
 <div class="header">
   <div class="header-left">
     <img src="logo.png" alt="Rock Oak" class="logo">
-    <div class="title-block">
-      <h1>Rock Oak Food Trucks</h1>
-      <span class="subtitle">Live 7-day schedule — refreshes every 15 minutes</span>
-    </div>
   </div>
   <div class="header-center">
+    <h1>Rock Oak Food Trucks</h1>
+    <div class="subtitle">Live 7-day schedule — refreshes every 15 minutes</div>
+  </div>
+  <div class="header-right">
     <div class="week-label" id="weekLabel"></div>
     <div class="last-synced" id="lastSynced"></div>
   </div>
-  <div style="min-width: 200px;"></div>
 </div>
 
 <div class="legend" id="legend"></div>
@@ -376,23 +369,23 @@ const CONFIG = {
   TIMEZONE: 'America/New_York',
   HOUR_START: 7,
   HOUR_END: 23,
-  REFRESH_INTERVAL: 5 * 60 * 1000,  // poll the static file every 5 min; Action commits every 15 min
+  REFRESH_INTERVAL: 5 * 60 * 1000,
   TODAY_COLUMN_WEIGHT: 1.6,
 };
 
-// Curated palette — distinct, vibrant, readable on dark background.
-// Each vendor name gets a deterministic slot via a simple string hash.
+// Solid saturated palette for white background — white text reads well on these.
+// Each vendor name maps deterministically to a slot.
 const VENDOR_PALETTE = [
-  { bg: 'rgba(74, 222, 128, 0.32)',  border: '#4ade80', text: '#effbf3', label: 'Green'  },
-  { bg: 'rgba(96, 165, 250, 0.32)',  border: '#60a5fa', text: '#eff6ff', label: 'Blue'   },
-  { bg: 'rgba(251, 146, 60, 0.32)',  border: '#fb923c', text: '#fff7ed', label: 'Orange' },
-  { bg: 'rgba(232, 67, 147, 0.32)',  border: '#e84393', text: '#fdf2f8', label: 'Pink'   },
-  { bg: 'rgba(167, 139, 250, 0.32)', border: '#a78bfa', text: '#f5f3ff', label: 'Purple' },
-  { bg: 'rgba(250, 204, 21, 0.32)',  border: '#facc15', text: '#fefce8', label: 'Yellow' },
-  { bg: 'rgba(45, 212, 191, 0.32)',  border: '#2dd4bf', text: '#f0fdfa', label: 'Teal'   },
-  { bg: 'rgba(248, 113, 113, 0.32)', border: '#f87171', text: '#fef2f2', label: 'Red'    },
-  { bg: 'rgba(192, 132, 252, 0.32)', border: '#c084fc', text: '#faf5ff', label: 'Lilac'  },
-  { bg: 'rgba(34, 197, 94, 0.32)',   border: '#22c55e', text: '#f0fdf4', label: 'Lime'   },
+  { bg: '#22c55e', border: '#15803d', label: 'Green'  },
+  { bg: '#3b82f6', border: '#1d4ed8', label: 'Blue'   },
+  { bg: '#f97316', border: '#c2410c', label: 'Orange' },
+  { bg: '#ec4899', border: '#be185d', label: 'Pink'   },
+  { bg: '#8b5cf6', border: '#6d28d9', label: 'Purple' },
+  { bg: '#eab308', border: '#a16207', label: 'Yellow' },
+  { bg: '#14b8a6', border: '#0f766e', label: 'Teal'   },
+  { bg: '#ef4444', border: '#b91c1c', label: 'Red'    },
+  { bg: '#a855f7', border: '#7e22ce', label: 'Lilac'  },
+  { bg: '#84cc16', border: '#4d7c0f', label: 'Lime'   },
 ];
 
 let currentEvents = [];
@@ -443,7 +436,6 @@ function escapeHtml(s) {
   })[c]);
 }
 
-// Deterministic color assignment per vendor name
 function vendorKey(title) {
   return title.trim().toLowerCase().replace(/\s+/g, ' ');
 }
@@ -462,7 +454,6 @@ function colorForVendor(title) {
   return VENDOR_PALETTE[idx];
 }
 
-// Lane assignment for overlapping events
 function assignLanes(events) {
   if (events.length === 0) return [];
   const sorted = [...events].sort((a, b) =>
@@ -512,7 +503,6 @@ function assignLanes(events) {
   return result;
 }
 
-// ── Fetch events.json ──
 async function fetchEvents() {
   try {
     const res = await fetch(CONFIG.DATA_URL + '?_=' + Date.now());
@@ -562,7 +552,6 @@ function showStatus(msg, ok) {
   if (ok) setTimeout(() => { bar.classList.remove('visible'); }, 10000);
 }
 
-// ── Legend (unique vendors visible this week) ──
 function buildLegend() {
   const el = document.getElementById('legend');
   el.innerHTML = '';
@@ -575,12 +564,11 @@ function buildLegend() {
     const c = colorForVendor(v);
     const item = document.createElement('div');
     item.className = 'legend-item';
-    item.innerHTML = `<span class="legend-dot" style="background:${c.border}"></span>${escapeHtml(v)}`;
+    item.innerHTML = '<span class="legend-dot" style="background:' + c.bg + '"></span>' + escapeHtml(v);
     el.appendChild(item);
   }
 }
 
-// ── Calendar render ──
 function buildCalendar() {
   const cal = document.getElementById('calendar');
   cal.innerHTML = '';
@@ -668,7 +656,6 @@ function buildCalendar() {
       block.style.width = 'calc(' + laneWidth + '% - 6px)';
       block.style.background = c.bg;
       block.style.borderLeftColor = c.border;
-      block.style.color = c.text;
 
       const startLabel = formatHour(Math.floor(ev.startHour));
       const endLabel = ' – ' + formatHour(Math.floor(ev.endHour));
@@ -735,7 +722,6 @@ function buildMobileView() {
         card.className = 'm-event';
         card.style.background = c.bg;
         card.style.borderLeftColor = c.border;
-        card.style.color = c.text;
         const startLabel = formatHour(Math.floor(ev.startHour));
         const endLabel = ' – ' + formatHour(Math.floor(ev.endHour));
         card.innerHTML = '<div class="m-event-info">' +
@@ -778,3 +764,4 @@ init();
 </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
