@@ -1,12 +1,9 @@
 name: Fetch food truck bookings
 
 on:
-  # Run every 15 minutes
   schedule:
     - cron: "*/15 * * * *"
-  # Allow manual triggering from the Actions tab
   workflow_dispatch:
-  # Also run on push to test changes immediately
   push:
     paths:
       - "fetch_tfc.py"
@@ -15,12 +12,18 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: fetch-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -34,15 +37,12 @@ jobs:
         run: |
           git config user.name  "rock-oak-foodtrucks-bot"
           git config user.email "actions@github.com"
-          # Stage events.json; ignore touch-only changes (only fetchedAt diff)
           git add events.json
-          # Check if anything other than the fetchedAt timestamp changed
           if git diff --cached --quiet; then
             echo "No changes to events.json"
             exit 0
           fi
-          # Check if only fetchedAt changed (avoid noisy commits when no bookings changed)
-          DIFF=$(git diff --cached --no-color events.json | grep -E '^[+-]' | grep -v '^[+-]{3}' || true)
+          DIFF=$(git diff --cached --no-color events.json | grep -E '^[+-]' | grep -vE '^[+-]{3}' || true)
           NON_TIMESTAMP=$(echo "$DIFF" | grep -v 'fetchedAt' || true)
           if [ -z "$NON_TIMESTAMP" ]; then
             echo "Only fetchedAt changed — skipping commit"
@@ -50,4 +50,14 @@ jobs:
             exit 0
           fi
           git commit -m "Update bookings: $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push
+          # Be resilient to concurrent commits to main (e.g. while we were running)
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push; then
+              echo "Pushed on attempt $i"
+              exit 0
+            fi
+            echo "Push attempt $i failed, retrying..."
+            sleep 3
+          done
+          echo "Failed to push after 3 attempts" >&2
+          exit 1
