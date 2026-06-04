@@ -3,19 +3,12 @@
     {
       "title": "Street Cravings",
       "space": "Rock Oak Clarence [Food Trucks Only]",
-      "startMs": 1780493400000,
-      "endMs": 1780504200000,
-      "color": "#0C823D"
-    },
-    {
-      "title": "Street Cravings",
-      "space": "Rock Oak Clarence [Food Trucks Only]",
       "startMs": 1780954200000,
       "endMs": 1780963200000,
       "color": "#0C823D"
     }
   ],
-  "fetchedAt": "2026-06-02T22:13:16.212490+00:00",
+  "fetchedAt": "2026-06-04T10:51:07.182762+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "calendarName": "Rock Oak Clarence [Food Trucks Only]"
