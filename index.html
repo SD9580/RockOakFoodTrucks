@@ -512,6 +512,8 @@ async function fetchEvents() {
     if (data.fetchedAt) lastFetchedAt = new Date(data.fetchedAt);
 
     currentEvents = (data.events || []).flatMap(ev => {
+      // events.json contains all 6 food-truck venues; this page shows only Rock Oak.
+      if ((ev.space || '') !== 'Rock Oak Clarence [Food Trucks Only]') return [];
       const start = new Date(ev.startMs);
       const end = new Date(ev.endMs);
       const dayIndex = dayIndexFromToday(start);
