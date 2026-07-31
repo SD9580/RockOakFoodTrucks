@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Oak Venues — Food Truck Schedule</title>
+<meta http-equiv="refresh" content="900">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #ffffff;
+    color: #1a1d26;
+    font-family: 'Inter', -apple-system, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-view { display: none; }
+
+  /* ── HEADER ── */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 14px 30px 12px;
+    border-bottom: 2px solid #d5d8e0;
+    gap: 20px;
+  }
+  .header-left {
+    display: flex; align-items: center; gap: 14px;
+    justify-self: start;
+  }
+  .header .logo {
+    height: 64px; width: auto;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+  }
+  .header-center { text-align: center; justify-self: center; }
+  .header h1 {
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    color: #185631;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .header .subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
+    margin-top: 4px;
+  }
+  .header-right { text-align: right; justify-self: end; }
+  .header .now-label {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1d26;
+    letter-spacing: -0.3px;
+  }
+  .header .last-synced {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-top: 2px;
+  }
+
+  /* ── STATUS BAR ── */
+  .status-bar {
+    display: none;
+    padding: 6px 30px;
+    background: #fef2f2;
+    border-bottom: 1px solid #fecaca;
+    font-size: 13px;
+    color: #b91c1c;
+    font-weight: 600;
+  }
+  .status-bar.visible { display: block; }
+  .status-bar.ok { color: #047857; background: #ecfdf5; border-color: #a7f3d0; }
+
+  /* ── MAIN GRID ──
+     Columns: [time-axis, venue1..5]
+     Rows: [venue-names, today-header, today-timeline, tomorrow-header, tomorrow-timeline]
+  */
+  .grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 60px repeat(5, 1fr);
+    grid-template-rows: auto auto 1fr auto 1fr;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .venue-header {
+    text-align: center;
+    padding: 10px 6px 10px;
+    font-weight: 800;
+    font-size: 22px;
+    color: #185631;
+    border-bottom: 2px solid #d5d8e0;
+    border-left: 2px solid #d5d8e0;
+    letter-spacing: -0.3px;
+  }
+  .corner {
+    border-bottom: 2px solid #d5d8e0;
+  }
+
+  .day-label {
+    grid-column: 1 / -1;
+    padding: 8px 30px;
+    background: #f3f4f6;
+    border-bottom: 2px solid #d5d8e0;
+    border-top: 1px solid #e5e7eb;
+    font-size: 18px;
+    font-weight: 800;
+    color: #374151;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .day-label.today {
+    background: rgba(20, 184, 166, 0.10);
+    color: #0d9488;
+    border-bottom-color: #0d9488;
+  }
+  .day-label .day-date {
+    font-weight: 700;
+    color: #6b7280;
+    margin-left: 12px;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .day-label.today .day-date { color: #0d9488; }
+
+  /* Time axis column: shows hour labels */
+  .time-axis {
+    position: relative;
+    border-left: 2px solid #d5d8e0;
+  }
+  .time-axis .time-label {
+    position: absolute;
+    right: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #9ca3af;
+    transform: translateY(-50%);
+  }
+
+  /* Each venue column in the timeline */
+  .timeline-cell {
+    position: relative;
+    border-left: 2px solid #d5d8e0;
+    min-height: 0;
+  }
+  .timeline-cell.today-col {
+    background: rgba(20, 184, 166, 0.04);
+  }
+  .timeline-cell .hour-line {
+    position: absolute;
+    left: 0; right: 0;
+    border-top: 1px solid #f0f1f4;
+  }
+
+  /* Event blocks */
+  .event {
+    position: absolute;
+    border-radius: 8px;
+    padding: 6px 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 700;
+    border-left-width: 5px;
+    border-left-style: solid;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    color: #fff;
+  }
+  .event .client-name {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.15;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  .event .time-range {
+    font-size: 15px;
+    font-weight: 700;
+    opacity: 0.95;
+    margin-top: 2px;
+  }
+  .event.compact { padding: 3px 8px; }
+  .event.compact .client-name { font-size: 17px; -webkit-line-clamp: 1; }
+  .event.compact .time-range { font-size: 13px; margin-top: 1px; }
+
+  .event.narrow .client-name { font-size: 17px; }
+  .event.narrow .time-range { font-size: 12px; }
+  .event.narrow.compact .client-name { font-size: 14px; }
+
+  /* Now indicator */
+  .now-line {
+    position: absolute;
+    left: 0; right: 0;
+    height: 2px;
+    background: #0d9488;
+    z-index: 10;
+    box-shadow: 0 0 6px rgba(13, 148, 136, 0.55);
+  }
+  .now-dot {
+    position: absolute;
+    left: -4px; top: -3px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #0d9488;
+  }
+
+  /* Empty state for a venue */
+  .empty-venue {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #d1d5db;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 30px;
+    border-top: 1px solid #e5e7eb;
+    background: #f9fafb;
+    font-size: 13px;
+    color: #6b7280;
+  }
+
+  /* ── LOADING ── */
+  .loading-overlay {
+    position: fixed; inset: 0;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 100;
+    transition: opacity 0.5s;
+  }
+  .loading-overlay.hidden { opacity: 0; pointer-events: none; }
+  .loading-text { font-size: 20px; color: #6b7280; font-weight: 600; }
+
+  @media (max-width: 900px) {
+    body { height: auto; overflow: auto; }
+    .grid { display: none; }
+    .mobile-view { display: block; padding: 16px; }
+    .header {
+      grid-template-columns: 1fr;
+      padding: 12px 16px;
+      gap: 6px;
+    }
+    .header-left, .header-center, .header-right { justify-self: start; text-align: left; }
+    .header h1 { font-size: 28px; white-space: normal; }
+    .header .logo { height: 44px; }
+
+    .m-venue { margin-top: 14px; }
+    .m-venue-name {
+      font-size: 22px; font-weight: 800; color: #185631;
+      padding: 8px 0; border-bottom: 2px solid #d5d8e0;
+    }
+    .m-day { margin-top: 10px; }
+    .m-day-label {
+      font-size: 13px; font-weight: 700; color: #6b7280;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .m-day.m-today .m-day-label { color: #0d9488; }
+    .m-no-events { padding: 6px 0; font-size: 13px; color: #d1d5db; font-weight: 600; }
+    .m-event {
+      display: flex; align-items: center;
+      padding: 10px 12px; margin-top: 6px;
+      border-radius: 8px;
+      border-left-width: 5px; border-left-style: solid;
+      color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+    }
+    .m-event .m-client { font-size: 17px; font-weight: 800; }
+    .m-event .m-time { font-size: 14px; font-weight: 700; opacity: 0.95; }
+  }
+</style>
+</head>
+<body>
+
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-text">Loading schedule...</div>
+</div>
+
+<div class="header">
+  <div class="header-left">
+    <img src="../logo.png" alt="Rock Oak" class="logo">
+  </div>
+  <div class="header-center">
+    <h1>Food Truck Venues</h1>
+    <div class="subtitle">Live 48-hour schedule across all Rock Oak venues — refreshes every 15 minutes</div>
+  </div>
+  <div class="header-right">
+    <div class="now-label" id="nowLabel"></div>
+    <div class="last-synced" id="lastSynced"></div>
+  </div>
+</div>
+
+<div class="status-bar" id="statusBar"></div>
+
+<div class="grid" id="grid"></div>
+
+<div class="mobile-view" id="mobileView"></div>
+
+<div class="footer">
+  <span>Live from The Food Corridor via GitHub Actions</span>
+  <span id="clock"></span>
+</div>
+
+<script>
+const CONFIG = {
+  DATA_URL: '../events.json',   // shared events.json at the repo root
+  HOUR_START: 7,
+  HOUR_END: 23,
+  REFRESH_INTERVAL: 5 * 60 * 1000,
+};
+
+// The 5 venues we're showing, in left-to-right order.
+// Map from TFC's full calendar name → short display name.
+const VENUES = [
+  { full: 'Clarence Driving Range [Food Trucks Only]', short: 'Driving Range' },
+  { full: 'Willow Square [Food Trucks Only]',           short: 'Willow Square' },
+  { full: '9735 Main Street [Food Trucks Only]',        short: '9735 Main' },
+  { full: 'Park Slope [Food Trucks Only]',              short: 'Park Slope' },
+  { full: 'Clarence Car Wash [Food Trucks Only]',       short: 'Clarence Car Wash' },
+];
+
+// Same solid vendor palette as the main food-trucks page.
+const VENDOR_PALETTE = [
+  { bg: '#22c55e', border: '#15803d' },
+  { bg: '#3b82f6', border: '#1d4ed8' },
+  { bg: '#f97316', border: '#c2410c' },
+  { bg: '#ec4899', border: '#be185d' },
+  { bg: '#8b5cf6', border: '#6d28d9' },
+  { bg: '#eab308', border: '#a16207' },
+  { bg: '#14b8a6', border: '#0f766e' },
+  { bg: '#ef4444', border: '#b91c1c' },
+  { bg: '#a855f7', border: '#7e22ce' },
+  { bg: '#84cc16', border: '#4d7c0f' },
+];
+
+let currentEvents = [];
+let lastFetchedAt = null;
+const vendorColorMap = new Map();
+
+const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const FULL_DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const TOTAL_HOURS = CONFIG.HOUR_END - CONFIG.HOUR_START;
+
+function startOfToday() { const d = new Date(); d.setHours(0,0,0,0); return d; }
+function startOfTomorrow() { const d = startOfToday(); d.setDate(d.getDate()+1); return d; }
+
+function isSameDay(d1, d2) {
+  return d1.getFullYear() === d2.getFullYear() &&
+         d1.getMonth() === d2.getMonth() &&
+         d1.getDate() === d2.getDate();
+}
+
+function formatHour(h) {
+  if (h === 0 || h === 24) return '12 AM';
+  if (h === 12) return '12 PM';
+  return h < 12 ? h + ' AM' : (h - 12) + ' PM';
+}
+function formatHourShort(h) {
+  if (h === 0 || h === 24) return '12a';
+  if (h === 12) return '12p';
+  return h < 12 ? h + 'a' : (h - 12) + 'p';
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  })[c]);
+}
+
+function vendorKey(title) { return title.trim().toLowerCase().replace(/\s+/g, ' '); }
+function hashString(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = ((h<<5) - h + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+function colorForVendor(title) {
+  const key = vendorKey(title);
+  if (vendorColorMap.has(key)) return vendorColorMap.get(key);
+  const idx = hashString(key) % VENDOR_PALETTE.length;
+  vendorColorMap.set(key, VENDOR_PALETTE[idx]);
+  return VENDOR_PALETTE[idx];
+}
+
+// Simple lane assignment for the rare case of overlapping bookings at one venue.
+function assignLanes(events) {
+  if (events.length === 0) return [];
+  const sorted = [...events].sort((a, b) => a.startHour - b.startHour || a.endHour - b.endHour);
+  const result = [];
+  const clusters = [];
+  let cur = []; let curEnd = -Infinity;
+  for (const ev of sorted) {
+    if (cur.length > 0 && ev.startHour < curEnd) {
+      cur.push(ev);
+      curEnd = Math.max(curEnd, ev.endHour);
+    } else {
+      if (cur.length > 0) clusters.push(cur);
+      cur = [ev]; curEnd = ev.endHour;
+    }
+  }
+  if (cur.length > 0) clusters.push(cur);
+  for (const cluster of clusters) {
+    const lanes = []; const placement = new Map();
+    for (const ev of cluster) {
+      let idx = -1;
+      for (let i = 0; i < lanes.length; i++) {
+        if (lanes[i][lanes[i].length-1].endHour <= ev.startHour) {
+          lanes[i].push(ev); idx = i; break;
+        }
+      }
+      if (idx === -1) { lanes.push([ev]); idx = lanes.length-1; }
+      placement.set(ev, idx);
+    }
+    const n = lanes.length;
+    for (const ev of cluster) result.push({ ...ev, _lane: placement.get(ev), _totalLanes: n });
+  }
+  return result;
+}
+
+async function fetchEvents() {
+  try {
+    const res = await fetch(CONFIG.DATA_URL + '?_=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    if (data.fetchedAt) lastFetchedAt = new Date(data.fetchedAt);
+
+    const today = startOfToday();
+    const tomorrow = startOfTomorrow();
+
+    currentEvents = (data.events || []).flatMap(ev => {
+      const venueMatch = VENUES.find(v => v.full === ev.space);
+      if (!venueMatch) return [];
+
+      const start = new Date(ev.startMs);
+      const end = new Date(ev.endMs);
+      // Only today or tomorrow
+      let dayIndex;
+      if (isSameDay(start, today)) dayIndex = 0;
+      else if (isSameDay(start, tomorrow)) dayIndex = 1;
+      else return [];
+
+      const startHour = start.getHours() + start.getMinutes()/60;
+      let endHour = end.getHours() + end.getMinutes()/60;
+      if (!isSameDay(start, end)) endHour = 24;
+      if (endHour === 0) endHour = 24;
+
+      return [{
+        title: ev.title,
+        venue: venueMatch,
+        start, end,
+        startHour, endHour,
+        dayIndex,
+      }];
+    });
+
+    showStatus('Loaded ' + currentEvents.length + ' bookings', true);
+
+    if (lastFetchedAt) {
+      document.getElementById('lastSynced').textContent =
+        'Updated ' + lastFetchedAt.toLocaleTimeString('en-US', {
+          hour: 'numeric', minute: '2-digit', hour12: true
+        });
+    }
+    return currentEvents;
+  } catch (err) {
+    console.error('Failed to fetch events:', err);
+    showStatus('Failed to load schedule: ' + err.message, false);
+    return currentEvents;
+  }
+}
+
+function showStatus(msg, ok) {
+  const bar = document.getElementById('statusBar');
+  bar.textContent = msg;
+  bar.className = 'status-bar visible' + (ok ? ' ok' : '');
+  if (ok) setTimeout(() => { bar.classList.remove('visible'); }, 10000);
+}
+
+function buildGrid() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+
+  const now = new Date();
+  const today = startOfToday();
+  const tomorrow = startOfTomorrow();
+
+  // Header row: corner + venue names
+  const corner = document.createElement('div');
+  corner.className = 'corner';
+  grid.appendChild(corner);
+  for (const v of VENUES) {
+    const h = document.createElement('div');
+    h.className = 'venue-header';
+    h.textContent = v.short;
+    grid.appendChild(h);
+  }
+
+  // Today's day label (spans full width)
+  const todayLabel = document.createElement('div');
+  todayLabel.className = 'day-label today';
+  todayLabel.innerHTML = 'TODAY <span class="day-date">' +
+    FULL_DAYS[today.getDay()] + ', ' + MONTH_NAMES[today.getMonth()] + ' ' + today.getDate() +
+    '</span>';
+  grid.appendChild(todayLabel);
+
+  // Today's timeline row: time axis + 5 venue cells
+  appendTimelineRow(grid, /*dayIndex*/ 0, /*isToday*/ true);
+
+  // Tomorrow's day label
+  const tomLabel = document.createElement('div');
+  tomLabel.className = 'day-label';
+  tomLabel.innerHTML = 'TOMORROW <span class="day-date">' +
+    FULL_DAYS[tomorrow.getDay()] + ', ' + MONTH_NAMES[tomorrow.getMonth()] + ' ' + tomorrow.getDate() +
+    '</span>';
+  grid.appendChild(tomLabel);
+
+  // Tomorrow's timeline row
+  appendTimelineRow(grid, 1, false);
+
+  // Now label in header
+  const nowLbl = document.getElementById('nowLabel');
+  nowLbl.textContent = 'Now: ' + now.toLocaleTimeString('en-US', {
+    hour: 'numeric', minute: '2-digit', hour12: true
+  });
+}
+
+function appendTimelineRow(grid, dayIndex, isToday) {
+  // Time axis column
+  const axis = document.createElement('div');
+  axis.className = 'time-axis';
+  for (let h = CONFIG.HOUR_START; h <= CONFIG.HOUR_END; h++) {
+    const pct = ((h - CONFIG.HOUR_START) / TOTAL_HOURS) * 100;
+    const lbl = document.createElement('div');
+    lbl.className = 'time-label';
+    lbl.style.top = pct + '%';
+    lbl.textContent = formatHourShort(h);
+    axis.appendChild(lbl);
+  }
+  grid.appendChild(axis);
+
+  const now = new Date();
+
+  // Venue timeline cells
+  for (const venue of VENUES) {
+    const cell = document.createElement('div');
+    cell.className = 'timeline-cell' + (isToday ? ' today-col' : '');
+
+    // Hour grid lines
+    for (let h = CONFIG.HOUR_START; h <= CONFIG.HOUR_END; h++) {
+      const pct = ((h - CONFIG.HOUR_START) / TOTAL_HOURS) * 100;
+      const line = document.createElement('div');
+      line.className = 'hour-line';
+      line.style.top = pct + '%';
+      cell.appendChild(line);
+    }
+
+    // Events for this venue on this day
+    const venueEvents = currentEvents.filter(e =>
+      e.dayIndex === dayIndex && e.venue.full === venue.full
+    );
+    const layedOut = assignLanes(venueEvents);
+
+    layedOut.forEach(ev => {
+      const clampedStart = Math.max(ev.startHour, CONFIG.HOUR_START);
+      const clampedEnd = Math.min(ev.endHour, CONFIG.HOUR_END);
+      if (clampedEnd <= CONFIG.HOUR_START || clampedStart >= CONFIG.HOUR_END) return;
+
+      const topPct = ((clampedStart - CONFIG.HOUR_START) / TOTAL_HOURS) * 100;
+      const heightPct = ((clampedEnd - clampedStart) / TOTAL_HOURS) * 100;
+      const laneWidth = 100 / ev._totalLanes;
+      const leftPct = ev._lane * laneWidth;
+
+      const duration = clampedEnd - clampedStart;
+      const isCompact = duration <= 2;
+      const isNarrow = ev._totalLanes >= 2;
+
+      const c = colorForVendor(ev.title);
+
+      const block = document.createElement('div');
+      block.className = 'event' + (isCompact ? ' compact' : '') + (isNarrow ? ' narrow' : '');
+      block.style.top = topPct + '%';
+      block.style.height = heightPct + '%';
+      block.style.left = 'calc(' + leftPct + '% + 3px)';
+      block.style.width = 'calc(' + laneWidth + '% - 6px)';
+      block.style.background = c.bg;
+      block.style.borderLeftColor = c.border;
+
+      const startLabel = formatHour(Math.floor(ev.startHour));
+      const endLabel = ' – ' + formatHour(Math.floor(ev.endHour));
+      block.innerHTML =
+        '<div class="client-name">' + escapeHtml(ev.title) + '</div>' +
+        '<div class="time-range">' + startLabel + endLabel + '</div>';
+      cell.appendChild(block);
+    });
+
+    // Now indicator on today's timeline
+    if (isToday) {
+      const nowH = now.getHours() + now.getMinutes() / 60;
+      if (nowH >= CONFIG.HOUR_START && nowH <= CONFIG.HOUR_END) {
+        const nowPct = ((nowH - CONFIG.HOUR_START) / TOTAL_HOURS) * 100;
+        const nowLine = document.createElement('div');
+        nowLine.className = 'now-line';
+        nowLine.style.top = nowPct + '%';
+        nowLine.innerHTML = '<div class="now-dot"></div>';
+        cell.appendChild(nowLine);
+      }
+    }
+
+    // Empty state
+    if (venueEvents.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'empty-venue';
+      empty.textContent = 'NO BOOKINGS';
+      cell.appendChild(empty);
+    }
+
+    grid.appendChild(cell);
+  }
+}
+
+function buildMobileView() {
+  const container = document.getElementById('mobileView');
+  container.innerHTML = '';
+
+  const today = startOfToday();
+  const tomorrow = startOfTomorrow();
+  const dayLabels = [
+    { idx: 0, label: 'Today', date: today },
+    { idx: 1, label: 'Tomorrow', date: tomorrow },
+  ];
+
+  for (const venue of VENUES) {
+    const section = document.createElement('div');
+    section.className = 'm-venue';
+    section.innerHTML = '<div class="m-venue-name">' + escapeHtml(venue.short) + '</div>';
+
+    for (const day of dayLabels) {
+      const dayDiv = document.createElement('div');
+      dayDiv.className = 'm-day' + (day.idx === 0 ? ' m-today' : '');
+      dayDiv.innerHTML = '<div class="m-day-label">' + day.label + ' — ' +
+        MONTH_NAMES[day.date.getMonth()] + ' ' + day.date.getDate() + '</div>';
+
+      const dayEvents = currentEvents
+        .filter(e => e.dayIndex === day.idx && e.venue.full === venue.full)
+        .sort((a, b) => a.startHour - b.startHour);
+
+      if (dayEvents.length === 0) {
+        const no = document.createElement('div');
+        no.className = 'm-no-events';
+        no.textContent = 'No bookings';
+        dayDiv.appendChild(no);
+      } else {
+        dayEvents.forEach(ev => {
+          const c = colorForVendor(ev.title);
+          const card = document.createElement('div');
+          card.className = 'm-event';
+          card.style.background = c.bg;
+          card.style.borderLeftColor = c.border;
+          const startLabel = formatHour(Math.floor(ev.startHour));
+          const endLabel = ' – ' + formatHour(Math.floor(ev.endHour));
+          card.innerHTML = '<div style="flex:1">' +
+            '<div class="m-client">' + escapeHtml(ev.title) + '</div>' +
+            '<div class="m-time">' + startLabel + endLabel + '</div>' +
+            '</div>';
+          dayDiv.appendChild(card);
+        });
+      }
+      section.appendChild(dayDiv);
+    }
+    container.appendChild(section);
+  }
+}
+
+function updateClock() {
+  document.getElementById('clock').textContent = new Date().toLocaleTimeString('en-US', {
+    hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true
+  });
+}
+
+async function init() {
+  await fetchEvents();
+  buildGrid();
+  buildMobileView();
+
+  document.getElementById('loadingOverlay').classList.add('hidden');
+
+  updateClock();
+  setInterval(updateClock, 1000);
+  setInterval(() => { buildGrid(); buildMobileView(); }, 60 * 1000);
+  setInterval(async () => {
+    await fetchEvents();
+    buildGrid();
+    buildMobileView();
+  }, CONFIG.REFRESH_INTERVAL);
+}
+
+init();
+</script>
+</body>
+</html>
