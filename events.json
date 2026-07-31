@@ -1,7 +1,22 @@
 {
-  "events": [],
-  "fetchedAt": "2026-06-20T06:03:17.907286+00:00",
+  "events": [
+    {
+      "title": "Street Cravings",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1786053600000,
+      "endMs": 1786062600000,
+      "color": "#4DD0E1"
+    }
+  ],
+  "fetchedAt": "2026-07-31T20:03:35.398444+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
-  "calendarName": "Rock Oak Clarence [Food Trucks Only]"
+  "venuesSeen": [
+    "9735 Main Street [Food Trucks Only]",
+    "Clarence Car Wash [Food Trucks Only]",
+    "Clarence Driving Range [Food Trucks Only]",
+    "Park Slope [Food Trucks Only]",
+    "Rock Oak Clarence [Food Trucks Only]",
+    "Willow Square [Food Trucks Only]"
+  ]
 }
