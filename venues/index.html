@@ -48,20 +48,11 @@
     line-height: 1;
     white-space: nowrap;
   }
-  .header .cck-mark {
-    font-size: 44px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #1a1d26;
-    background: #1a1d26;
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    padding: 4px 12px;
-    border: 3px solid #ea580c;
-    border-radius: 8px;
-    line-height: 1;
+  .header .cck-logo {
+    height: 82px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.10));
   }
   .header .subtitle {
     font-size: 14px;
@@ -281,6 +272,7 @@
     }
     .header-left, .header-center, .header-right { justify-self: start; text-align: left; }
     .header h1 { font-size: 28px; white-space: normal; }
+    .header .cck-logo { height: 50px; }
     .header .logo { height: 44px; }
 
     .m-venue { margin-top: 14px; }
@@ -316,7 +308,7 @@
 
 <div class="header">
   <div class="header-left">
-    <div class="cck-mark">CCK</div>
+    <img src="cck_logo.png" alt="CCK — Clarence Creative Kitchen" class="cck-logo">
   </div>
   <div class="header-center">
     <h1>CCK Hotspots</h1>
