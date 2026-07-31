@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rock Oak Venues — Food Truck Schedule</title>
+<title>CCK Hotspots — Food Truck Schedule</title>
 <meta http-equiv="refresh" content="900">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
@@ -44,9 +44,24 @@
     font-size: 60px;
     font-weight: 900;
     letter-spacing: -1.5px;
-    color: #185631;
+    color: #1a1d26;
     line-height: 1;
     white-space: nowrap;
+  }
+  .header .cck-mark {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #1a1d26;
+    background: #1a1d26;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 4px 12px;
+    border: 3px solid #ea580c;
+    border-radius: 8px;
+    line-height: 1;
   }
   .header .subtitle {
     font-size: 14px;
@@ -96,13 +111,14 @@
 
   .venue-header {
     text-align: center;
-    padding: 10px 6px 10px;
+    padding: 12px 6px 12px;
     font-weight: 800;
-    font-size: 22px;
-    color: #185631;
+    font-size: 36px;
+    color: #1a1d26;
     border-bottom: 2px solid #d5d8e0;
     border-left: 2px solid #d5d8e0;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.5px;
+    line-height: 1;
   }
   .corner {
     border-bottom: 2px solid #d5d8e0;
@@ -269,7 +285,7 @@
 
     .m-venue { margin-top: 14px; }
     .m-venue-name {
-      font-size: 22px; font-weight: 800; color: #185631;
+      font-size: 28px; font-weight: 800; color: #1a1d26;
       padding: 8px 0; border-bottom: 2px solid #d5d8e0;
     }
     .m-day { margin-top: 10px; }
@@ -300,11 +316,11 @@
 
 <div class="header">
   <div class="header-left">
-    <img src="../logo.png" alt="Rock Oak" class="logo">
+    <div class="cck-mark">CCK</div>
   </div>
   <div class="header-center">
-    <h1>Food Truck Venues</h1>
-    <div class="subtitle">Live 48-hour schedule across all Rock Oak venues — refreshes every 15 minutes</div>
+    <h1>CCK Hotspots</h1>
+    <div class="subtitle">Live 48-hour schedule across CCK food-truck locations — refreshes every 15 minutes</div>
   </div>
   <div class="header-right">
     <div class="now-label" id="nowLabel"></div>
