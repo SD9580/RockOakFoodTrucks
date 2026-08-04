@@ -15,6 +15,13 @@
       "color": "#4DD0E1"
     },
     {
+      "title": "Main and Mango",
+      "space": "Willow Square [Food Trucks Only]",
+      "startMs": 1786212000000,
+      "endMs": 1786233600000,
+      "color": "#4DD0E1"
+    },
+    {
       "title": "Momma's Soft Pretzels",
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1786377600000,
@@ -22,7 +29,7 @@
       "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-04T05:49:25.393011+00:00",
+  "fetchedAt": "2026-08-04T21:58:22.135051+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
