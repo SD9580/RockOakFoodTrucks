@@ -1,20 +1,6 @@
 {
   "events": [
     {
-      "title": "THE HDC",
-      "space": "Clarence Car Wash [Food Trucks Only]",
-      "startMs": 1785769200000,
-      "endMs": 1785780000000,
-      "color": "#4DD0E1"
-    },
-    {
-      "title": "THE HDC",
-      "space": "Park Slope [Food Trucks Only]",
-      "startMs": 1785781800000,
-      "endMs": 1785796200000,
-      "color": "#4DD0E1"
-    },
-    {
       "title": "Street Cravings",
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1786053600000,
@@ -27,9 +13,16 @@
       "startMs": 1786199400000,
       "endMs": 1786222800000,
       "color": "#4DD0E1"
+    },
+    {
+      "title": "Momma's Soft Pretzels",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1786377600000,
+      "endMs": 1786401000000,
+      "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-03T07:37:55.847895+00:00",
+  "fetchedAt": "2026-08-04T05:49:25.393011+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
