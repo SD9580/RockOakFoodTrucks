@@ -1,10 +1,31 @@
 {
   "events": [
     {
+      "title": "THE HDC",
+      "space": "Clarence Driving Range [Food Trucks Only]",
+      "startMs": 1785945600000,
+      "endMs": 1785956400000,
+      "color": "#4DD0E1"
+    },
+    {
+      "title": "THE HDC",
+      "space": "Clarence Driving Range [Food Trucks Only]",
+      "startMs": 1786028400000,
+      "endMs": 1786042800000,
+      "color": "#4DD0E1"
+    },
+    {
       "title": "Street Cravings",
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1786053600000,
       "endMs": 1786062600000,
+      "color": "#4DD0E1"
+    },
+    {
+      "title": "THE HDC",
+      "space": "Clarence Driving Range [Food Trucks Only]",
+      "startMs": 1786114800000,
+      "endMs": 1786125600000,
       "color": "#4DD0E1"
     },
     {
@@ -36,7 +57,7 @@
       "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-04T23:11:31.633950+00:00",
+  "fetchedAt": "2026-08-05T15:38:37.344005+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
