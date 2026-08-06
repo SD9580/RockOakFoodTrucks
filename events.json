@@ -3,13 +3,6 @@
     {
       "title": "THE HDC",
       "space": "Clarence Driving Range [Food Trucks Only]",
-      "startMs": 1785945600000,
-      "endMs": 1785956400000,
-      "color": "#4DD0E1"
-    },
-    {
-      "title": "THE HDC",
-      "space": "Clarence Driving Range [Food Trucks Only]",
       "startMs": 1786028400000,
       "endMs": 1786042800000,
       "color": "#4DD0E1"
@@ -55,9 +48,16 @@
       "startMs": 1786377600000,
       "endMs": 1786401000000,
       "color": "#4DD0E1"
+    },
+    {
+      "title": "Main and Mango",
+      "space": "Park Slope [Food Trucks Only]",
+      "startMs": 1786568400000,
+      "endMs": 1786579200000,
+      "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-05T15:38:37.344005+00:00",
+  "fetchedAt": "2026-08-06T06:15:54.312284+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
