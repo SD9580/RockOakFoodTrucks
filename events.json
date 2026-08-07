@@ -3,13 +3,6 @@
     {
       "title": "THE HDC",
       "space": "Clarence Driving Range [Food Trucks Only]",
-      "startMs": 1786028400000,
-      "endMs": 1786042800000,
-      "color": "#4DD0E1"
-    },
-    {
-      "title": "THE HDC",
-      "space": "Clarence Driving Range [Food Trucks Only]",
       "startMs": 1786114800000,
       "endMs": 1786125600000,
       "color": "#4DD0E1"
@@ -48,9 +41,23 @@
       "startMs": 1786568400000,
       "endMs": 1786579200000,
       "color": "#4DD0E1"
+    },
+    {
+      "title": "Main and Mango",
+      "space": "Rock Oak Clarence [Food Trucks Only]",
+      "startMs": 1786654800000,
+      "endMs": 1786665600000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Street Cravings",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1786658400000,
+      "endMs": 1786667400000,
+      "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-06T11:41:07.600222+00:00",
+  "fetchedAt": "2026-08-07T05:23:51.198239+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
