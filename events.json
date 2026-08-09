@@ -1,20 +1,6 @@
 {
   "events": [
     {
-      "title": "Momma's Soft Pretzels",
-      "space": "Clarence Driving Range [Food Trucks Only]",
-      "startMs": 1786199400000,
-      "endMs": 1786222800000,
-      "color": "#4DD0E1"
-    },
-    {
-      "title": "Main and Mango",
-      "space": "Willow Square [Food Trucks Only]",
-      "startMs": 1786212000000,
-      "endMs": 1786233600000,
-      "color": "#4DD0E1"
-    },
-    {
       "title": "Main and Mango",
       "space": "Willow Square [Food Trucks Only]",
       "startMs": 1786298400000,
@@ -50,7 +36,7 @@
       "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-08T04:41:01.763435+00:00",
+  "fetchedAt": "2026-08-09T04:01:46.354668+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
