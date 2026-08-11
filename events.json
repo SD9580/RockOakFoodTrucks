@@ -1,13 +1,6 @@
 {
   "events": [
     {
-      "title": "Momma's Soft Pretzels",
-      "space": "Clarence Car Wash [Food Trucks Only]",
-      "startMs": 1786377600000,
-      "endMs": 1786401000000,
-      "color": "#4DD0E1"
-    },
-    {
       "title": "Main and Mango",
       "space": "Park Slope [Food Trucks Only]",
       "startMs": 1786568400000,
@@ -29,7 +22,7 @@
       "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-10T04:04:14.999334+00:00",
+  "fetchedAt": "2026-08-11T04:21:13.706769+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
