@@ -6,9 +6,16 @@
       "startMs": 1787263200000,
       "endMs": 1787272200000,
       "color": "#4DD0E1"
+    },
+    {
+      "title": "Main and Mango",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1787346000000,
+      "endMs": 1787356800000,
+      "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-14T04:28:39.058122+00:00",
+  "fetchedAt": "2026-08-15T04:04:11.114286+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
