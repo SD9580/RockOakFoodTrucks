@@ -1,13 +1,6 @@
 {
   "events": [
     {
-      "title": "Street Cravings",
-      "space": "Clarence Car Wash [Food Trucks Only]",
-      "startMs": 1787263200000,
-      "endMs": 1787272200000,
-      "color": "#4DD0E1"
-    },
-    {
       "title": "Main and Mango",
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1787346000000,
@@ -29,7 +22,7 @@
       "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-17T04:25:56.220724+00:00",
+  "fetchedAt": "2026-08-19T18:48:03.039997+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
