@@ -15,6 +15,20 @@
       "color": "#4DD0E1"
     },
     {
+      "title": "L-CON LLC D/B/A I GOTTA GUY ITALIAN ICES",
+      "space": "Park Slope [Food Trucks Only]",
+      "startMs": 1787346000000,
+      "endMs": 1787356800000,
+      "color": "#4DD0E1"
+    },
+    {
+      "title": "L-CON LLC D/B/A I GOTTA GUY ITALIAN ICES",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1787421600000,
+      "endMs": 1787436000000,
+      "color": "#4DD0E1"
+    },
+    {
       "title": "Main and Mango",
       "space": "Willow Square [Food Trucks Only]",
       "startMs": 1787425200000,
@@ -27,9 +41,16 @@
       "startMs": 1787493600000,
       "endMs": 1787508000000,
       "color": "#4DD0E1"
+    },
+    {
+      "title": "L-CON LLC D/B/A I GOTTA GUY ITALIAN ICES",
+      "space": "Park Slope [Food Trucks Only]",
+      "startMs": 1787500800000,
+      "endMs": 1787522400000,
+      "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-20T02:43:49.188302+00:00",
+  "fetchedAt": "2026-08-20T03:32:31.890454+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
