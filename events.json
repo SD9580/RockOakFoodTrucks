@@ -22,6 +22,13 @@
       "color": "#4DD0E1"
     },
     {
+      "title": "THE HDC",
+      "space": "Clarence Driving Range [Food Trucks Only]",
+      "startMs": 1787410800000,
+      "endMs": 1787428800000,
+      "color": "#4DD0E1"
+    },
+    {
       "title": "L-CON LLC D/B/A I GOTTA GUY ITALIAN ICES",
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1787421600000,
@@ -57,7 +64,7 @@
       "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-21T15:51:30.722645+00:00",
+  "fetchedAt": "2026-08-22T01:44:24.808006+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
