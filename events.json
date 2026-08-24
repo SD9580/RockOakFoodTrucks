@@ -1,13 +1,6 @@
 {
   "events": [
     {
-      "title": "Main and Mango",
-      "space": "Willow Square [Food Trucks Only]",
-      "startMs": 1787493600000,
-      "endMs": 1787508000000,
-      "color": "#4DD0E1"
-    },
-    {
       "title": "Cielito Lindo Taquer\u00eda",
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1787670000000,
@@ -92,7 +85,7 @@
       "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-24T02:47:19.245486+00:00",
+  "fetchedAt": "2026-08-24T04:49:34.649585+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
