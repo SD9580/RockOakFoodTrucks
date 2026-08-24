@@ -8,10 +8,52 @@
       "color": "#4DD0E1"
     },
     {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1787670000000,
+      "endMs": 1787682600000,
+      "color": "#4DD0E1"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Driving Range [Food Trucks Only]",
+      "startMs": 1787691600000,
+      "endMs": 1787702400000,
+      "color": "#4DD0E1"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Driving Range [Food Trucks Only]",
+      "startMs": 1787760000000,
+      "endMs": 1787770800000,
+      "color": "#4DD0E1"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1787779800000,
+      "endMs": 1787788800000,
+      "color": "#4DD0E1"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Driving Range [Food Trucks Only]",
+      "startMs": 1787846400000,
+      "endMs": 1787859000000,
+      "color": "#4DD0E1"
+    },
+    {
       "title": "Street Cravings",
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1787868000000,
       "endMs": 1787877000000,
+      "color": "#4DD0E1"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Driving Range [Food Trucks Only]",
+      "startMs": 1787932800000,
+      "endMs": 1787943600000,
       "color": "#4DD0E1"
     },
     {
@@ -22,14 +64,28 @@
       "color": "#4DD0E1"
     },
     {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Driving Range [Food Trucks Only]",
+      "startMs": 1788019200000,
+      "endMs": 1788030000000,
+      "color": "#4DD0E1"
+    },
+    {
       "title": "Main and Mango",
       "space": "Willow Square [Food Trucks Only]",
       "startMs": 1788030000000,
       "endMs": 1788048000000,
       "color": "#4DD0E1"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1788039000000,
+      "endMs": 1788049800000,
+      "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-23T04:39:36.481109+00:00",
+  "fetchedAt": "2026-08-24T01:25:41.844652+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
