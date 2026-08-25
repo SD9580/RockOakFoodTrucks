@@ -16,20 +16,6 @@
     },
     {
       "title": "Cielito Lindo Taquer\u00eda",
-      "space": "Clarence Driving Range [Food Trucks Only]",
-      "startMs": 1787691600000,
-      "endMs": 1787702400000,
-      "color": "#4DD0E1"
-    },
-    {
-      "title": "Cielito Lindo Taquer\u00eda",
-      "space": "Clarence Driving Range [Food Trucks Only]",
-      "startMs": 1787760000000,
-      "endMs": 1787770800000,
-      "color": "#4DD0E1"
-    },
-    {
-      "title": "Cielito Lindo Taquer\u00eda",
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1787779800000,
       "endMs": 1787788800000,
@@ -99,7 +85,7 @@
       "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-25T04:00:11.946005+00:00",
+  "fetchedAt": "2026-08-25T16:00:18.494424+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
