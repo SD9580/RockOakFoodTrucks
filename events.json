@@ -1,34 +1,6 @@
 {
   "events": [
     {
-      "title": "THE HDC",
-      "space": "Clarence Driving Range [Food Trucks Only]",
-      "startMs": 1787752800000,
-      "endMs": 1787778000000,
-      "color": "#4DD0E1"
-    },
-    {
-      "title": "Cielito Lindo Taquer\u00eda",
-      "space": "Clarence Car Wash [Food Trucks Only]",
-      "startMs": 1787760000000,
-      "endMs": 1787785200000,
-      "color": "#4DD0E1"
-    },
-    {
-      "title": "L-CON LLC D/B/A I GOTTA GUY ITALIAN ICES",
-      "space": "Willow Square [Food Trucks Only]",
-      "startMs": 1787779800000,
-      "endMs": 1787788800000,
-      "color": "#4DD0E1"
-    },
-    {
-      "title": "THE HDC",
-      "space": "Clarence Driving Range [Food Trucks Only]",
-      "startMs": 1787844600000,
-      "endMs": 1787864400000,
-      "color": "#4DD0E1"
-    },
-    {
       "title": "Cielito Lindo Taquer\u00eda",
       "space": "Willow Square [Food Trucks Only]",
       "startMs": 1787846400000,
@@ -104,9 +76,23 @@
       "startMs": 1788278400000,
       "endMs": 1788305400000,
       "color": "#4DD0E1"
+    },
+    {
+      "title": "THE HDC",
+      "space": "Clarence Driving Range [Food Trucks Only]",
+      "startMs": 1788359400000,
+      "endMs": 1788391800000,
+      "color": "#4DD0E1"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1788364800000,
+      "endMs": 1788391800000,
+      "color": "#4DD0E1"
     }
   ],
-  "fetchedAt": "2026-08-26T18:15:08.582724+00:00",
+  "fetchedAt": "2026-08-27T05:05:35.814635+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
