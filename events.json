@@ -12,7 +12,7 @@
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1787950800000,
       "endMs": 1787961600000,
-      "color": "#4DD0E1"
+      "color": "#18AD90"
     },
     {
       "title": "THE HDC",
@@ -26,14 +26,14 @@
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1788019200000,
       "endMs": 1788044400000,
-      "color": "#4DD0E1"
+      "color": "#18AD90"
     },
     {
       "title": "Main and Mango",
       "space": "Willow Square [Food Trucks Only]",
       "startMs": 1788030000000,
       "endMs": 1788048000000,
-      "color": "#4DD0E1"
+      "color": "#FFC107"
     },
     {
       "title": "THE HDC",
@@ -54,14 +54,14 @@
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1788192000000,
       "endMs": 1788219000000,
-      "color": "#4DD0E1"
+      "color": "#18AD90"
     },
     {
       "title": "Cielito Lindo Taquer\u00eda",
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1788278400000,
       "endMs": 1788305400000,
-      "color": "#4DD0E1"
+      "color": "#18AD90"
     },
     {
       "title": "THE HDC",
@@ -75,7 +75,7 @@
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1788364800000,
       "endMs": 1788391800000,
-      "color": "#4DD0E1"
+      "color": "#18AD90"
     },
     {
       "title": "THE HDC",
@@ -89,7 +89,7 @@
       "space": "Willow Square [Food Trucks Only]",
       "startMs": 1788451200000,
       "endMs": 1788478200000,
-      "color": "#4DD0E1"
+      "color": "#FFC107"
     },
     {
       "title": "Main and Mango",
@@ -103,10 +103,10 @@
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1788472800000,
       "endMs": 1788481800000,
-      "color": "#4DD0E1"
+      "color": "#18AD90"
     }
   ],
-  "fetchedAt": "2026-08-28T12:47:26.691515+00:00",
+  "fetchedAt": "2026-08-28T22:56:11.364759+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
