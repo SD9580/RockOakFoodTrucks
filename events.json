@@ -8,13 +8,6 @@
       "color": "#4DD0E1"
     },
     {
-      "title": "Cielito Lindo Taquer\u00eda",
-      "space": "Clarence Car Wash [Food Trucks Only]",
-      "startMs": 1788796800000,
-      "endMs": 1788823800000,
-      "color": "#18AD90"
-    },
-    {
       "title": "THE HDC",
       "space": "Clarence Driving Range [Food Trucks Only]",
       "startMs": 1788877800000,
@@ -85,7 +78,7 @@
       "color": "#FFC107"
     }
   ],
-  "fetchedAt": "2026-09-06T06:22:22.976903+00:00",
+  "fetchedAt": "2026-09-06T19:12:21.929608+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
