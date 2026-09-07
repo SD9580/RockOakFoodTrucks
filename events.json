@@ -76,9 +76,16 @@
       "startMs": 1789221600000,
       "endMs": 1789243200000,
       "color": "#FFC107"
+    },
+    {
+      "title": "Main and Mango",
+      "space": "Willow Square [Food Trucks Only]",
+      "startMs": 1789308000000,
+      "endMs": 1789326000000,
+      "color": "#FFC107"
     }
   ],
-  "fetchedAt": "2026-09-06T19:12:21.929608+00:00",
+  "fetchedAt": "2026-09-07T06:07:12.508232+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
