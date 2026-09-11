@@ -1,27 +1,6 @@
 {
   "events": [
     {
-      "title": "THE HDC",
-      "space": "Willow Square [Food Trucks Only]",
-      "startMs": 1789050600000,
-      "endMs": 1789077600000,
-      "color": "#FFC107"
-    },
-    {
-      "title": "Cielito Lindo Taquer\u00eda",
-      "space": "Clarence Driving Range [Food Trucks Only]",
-      "startMs": 1789056000000,
-      "endMs": 1789083000000,
-      "color": "#4DD0E1"
-    },
-    {
-      "title": "Street Cravings",
-      "space": "Clarence Car Wash [Food Trucks Only]",
-      "startMs": 1789077600000,
-      "endMs": 1789086600000,
-      "color": "#18AD90"
-    },
-    {
       "title": "Cielito Lindo Taquer\u00eda",
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1789142400000,
@@ -83,9 +62,23 @@
       "startMs": 1789574400000,
       "endMs": 1789601400000,
       "color": "#18AD90"
+    },
+    {
+      "title": "THE HDC",
+      "space": "Clarence Driving Range [Food Trucks Only]",
+      "startMs": 1789653600000,
+      "endMs": 1789687800000,
+      "color": "#4DD0E1"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1789660800000,
+      "endMs": 1789687800000,
+      "color": "#18AD90"
     }
   ],
-  "fetchedAt": "2026-09-11T03:41:23.368996+00:00",
+  "fetchedAt": "2026-09-11T08:19:28.807937+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
