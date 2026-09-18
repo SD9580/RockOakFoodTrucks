@@ -8,13 +8,6 @@
       "color": "#4DD0E1"
     },
     {
-      "title": "Cielito Lindo Taquer\u00eda",
-      "space": "Clarence Car Wash [Food Trucks Only]",
-      "startMs": 1789747200000,
-      "endMs": 1789774200000,
-      "color": "#18AD90"
-    },
-    {
       "title": "Street Cravings",
       "space": "Rock Oak Clarence [Food Trucks Only]",
       "startMs": 1789754400000,
@@ -85,7 +78,7 @@
       "color": "#18AD90"
     }
   ],
-  "fetchedAt": "2026-09-18T05:15:05.403271+00:00",
+  "fetchedAt": "2026-09-18T14:12:09.625125+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
