@@ -8,13 +8,6 @@
       "color": "#4DD0E1"
     },
     {
-      "title": "Street Cravings",
-      "space": "Rock Oak Clarence [Food Trucks Only]",
-      "startMs": 1789754400000,
-      "endMs": 1789765200000,
-      "color": "#0C823D"
-    },
-    {
       "title": "THE HDC",
       "space": "Willow Square [Food Trucks Only]",
       "startMs": 1789912800000,
@@ -78,7 +71,7 @@
       "color": "#18AD90"
     }
   ],
-  "fetchedAt": "2026-09-18T14:12:09.625125+00:00",
+  "fetchedAt": "2026-09-18T22:29:30.402725+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
@@ -86,7 +79,6 @@
     "Clarence Car Wash [Food Trucks Only]",
     "Clarence Driving Range [Food Trucks Only]",
     "Park Slope [Food Trucks Only]",
-    "Rock Oak Clarence [Food Trucks Only]",
     "Willow Square [Food Trucks Only]"
   ]
 }
