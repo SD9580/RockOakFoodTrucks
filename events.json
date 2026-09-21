@@ -3,13 +3,6 @@
     {
       "title": "THE HDC",
       "space": "Willow Square [Food Trucks Only]",
-      "startMs": 1789912800000,
-      "endMs": 1789947000000,
-      "color": "#FFC107"
-    },
-    {
-      "title": "THE HDC",
-      "space": "Willow Square [Food Trucks Only]",
       "startMs": 1789999200000,
       "endMs": 1790033400000,
       "color": "#FFC107"
@@ -92,7 +85,7 @@
       "color": "#18AD90"
     }
   ],
-  "fetchedAt": "2026-09-20T06:49:38.133200+00:00",
+  "fetchedAt": "2026-09-21T06:51:39.544555+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
