@@ -3,20 +3,6 @@
     {
       "title": "THE HDC",
       "space": "Willow Square [Food Trucks Only]",
-      "startMs": 1790085600000,
-      "endMs": 1790119800000,
-      "color": "#0C823D"
-    },
-    {
-      "title": "Cielito Lindo Taquer\u00eda",
-      "space": "Clarence Car Wash [Food Trucks Only]",
-      "startMs": 1790092800000,
-      "endMs": 1790119800000,
-      "color": "#0C823D"
-    },
-    {
-      "title": "THE HDC",
-      "space": "Willow Square [Food Trucks Only]",
       "startMs": 1790172000000,
       "endMs": 1790206200000,
       "color": "#0C823D"
@@ -83,9 +69,30 @@
       "startMs": 1790611200000,
       "endMs": 1790638200000,
       "color": "#0C823D"
+    },
+    {
+      "title": "THE HDC",
+      "space": "Willow Square [Food Trucks Only]",
+      "startMs": 1790690400000,
+      "endMs": 1790719200000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1790697600000,
+      "endMs": 1790724600000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Main and Mango",
+      "space": "Park Slope [Food Trucks Only]",
+      "startMs": 1790715600000,
+      "endMs": 1790726400000,
+      "color": "#0C823D"
     }
   ],
-  "fetchedAt": "2026-09-22T06:17:17.626712+00:00",
+  "fetchedAt": "2026-09-23T06:26:00.143097+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
