@@ -1,14 +1,6 @@
 {
-  "events": [
-    {
-      "title": "THE HDC",
-      "space": "Clarence Driving Range [Food Trucks Only]",
-      "startMs": 1791640800000,
-      "endMs": 1791666000000,
-      "color": "#0C823D"
-    }
-  ],
-  "fetchedAt": "2026-10-10T08:16:48.343781+00:00",
+  "events": [],
+  "fetchedAt": "2026-10-11T07:13:22.411630+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
