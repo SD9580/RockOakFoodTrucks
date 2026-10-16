@@ -13,9 +13,16 @@
       "startMs": 1792209600000,
       "endMs": 1792222200000,
       "color": "#0C823D"
+    },
+    {
+      "title": "Giftofsoul",
+      "space": "Willow Square [Food Trucks Only]",
+      "startMs": 1792414800000,
+      "endMs": 1792425600000,
+      "color": "#0C823D"
     }
   ],
-  "fetchedAt": "2026-10-16T14:38:11.998974+00:00",
+  "fetchedAt": "2026-10-16T18:24:21.048518+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
