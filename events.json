@@ -22,6 +22,13 @@
       "color": "#0C823D"
     },
     {
+      "title": "Giftofsoul",
+      "space": "Willow Square [Food Trucks Only]",
+      "startMs": 1792495800000,
+      "endMs": 1792508400000,
+      "color": "#0C823D"
+    },
+    {
       "title": "Cielito Lindo Taquer\u00eda",
       "space": "Clarence Car Wash [Food Trucks Only]",
       "startMs": 1792512000000,
@@ -43,7 +50,7 @@
       "color": "#0C823D"
     }
   ],
-  "fetchedAt": "2026-10-19T20:25:38.101800+00:00",
+  "fetchedAt": "2026-10-19T23:52:54.420907+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
