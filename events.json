@@ -1,13 +1,6 @@
 {
   "events": [
     {
-      "title": "THE HDC",
-      "space": "Clarence Driving Range [Food Trucks Only]",
-      "startMs": 1792942200000,
-      "endMs": 1792956600000,
-      "color": "#0C823D"
-    },
-    {
       "title": "Giftofsoul",
       "space": "Willow Square [Food Trucks Only]",
       "startMs": 1793007000000,
@@ -15,7 +8,7 @@
       "color": "#0C823D"
     }
   ],
-  "fetchedAt": "2026-10-25T19:11:21.386813+00:00",
+  "fetchedAt": "2026-10-26T04:09:19.362120+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
