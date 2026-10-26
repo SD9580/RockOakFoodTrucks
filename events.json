@@ -1,14 +1,63 @@
 {
   "events": [
     {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1792987200000,
+      "endMs": 1793057400000,
+      "color": "#0C823D"
+    },
+    {
       "title": "Giftofsoul",
       "space": "Willow Square [Food Trucks Only]",
       "startMs": 1793007000000,
       "endMs": 1793026800000,
       "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1793073600000,
+      "endMs": 1793143800000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1793160000000,
+      "endMs": 1793230200000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1793246400000,
+      "endMs": 1793316600000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1793332800000,
+      "endMs": 1793403000000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1793419200000,
+      "endMs": 1793489400000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1793505600000,
+      "endMs": 1793575800000,
+      "color": "#0C823D"
     }
   ],
-  "fetchedAt": "2026-10-26T04:09:19.362120+00:00",
+  "fetchedAt": "2026-10-26T10:08:46.974999+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
