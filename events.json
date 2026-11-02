@@ -1,14 +1,6 @@
 {
-  "events": [
-    {
-      "title": "Cielito Lindo Taquer\u00eda",
-      "space": "Clarence Car Wash [Food Trucks Only]",
-      "startMs": 1793505600000,
-      "endMs": 1793575800000,
-      "color": "#0C823D"
-    }
-  ],
-  "fetchedAt": "2026-11-01T07:55:31.875301+00:00",
+  "events": [],
+  "fetchedAt": "2026-11-02T09:49:19.880872+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
