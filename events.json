@@ -1,7 +1,56 @@
 {
-  "events": [],
-  "fetchedAt": "2026-11-13T11:13:26.148243+00:00",
+  "events": [
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1794589200000,
+      "endMs": 1794619800000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1794675600000,
+      "endMs": 1794706200000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1794848400000,
+      "endMs": 1794875400000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1794934800000,
+      "endMs": 1794961800000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1795021200000,
+      "endMs": 1795048200000,
+      "color": "#0C823D"
+    },
+    {
+      "title": "Cielito Lindo Taquer\u00eda",
+      "space": "Clarence Car Wash [Food Trucks Only]",
+      "startMs": 1795107600000,
+      "endMs": 1795134600000,
+      "color": "#0C823D"
+    }
+  ],
+  "fetchedAt": "2026-11-13T18:33:54.955507+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
-  "venuesSeen": []
+  "venuesSeen": [
+    "9735 Main Street [Food Trucks Only]",
+    "Clarence Car Wash [Food Trucks Only]",
+    "Clarence Driving Range [Food Trucks Only]",
+    "Park Slope [Food Trucks Only]",
+    "Willow Square [Food Trucks Only]"
+  ]
 }
