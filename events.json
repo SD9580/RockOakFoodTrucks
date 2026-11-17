@@ -2,7 +2,7 @@
   "events": [
     {
       "title": "HMM \u2026 THAT SOUNDS GOOD",
-      "space": "Willow Square [Food Trucks Only]",
+      "space": "Clarence Driving Range [Food Trucks Only]",
       "startMs": 1794844800000,
       "endMs": 1794862800000,
       "color": "#0C823D"
@@ -16,7 +16,7 @@
     },
     {
       "title": "HMM \u2026 THAT SOUNDS GOOD",
-      "space": "Willow Square [Food Trucks Only]",
+      "space": "Clarence Driving Range [Food Trucks Only]",
       "startMs": 1794931200000,
       "endMs": 1794949200000,
       "color": "#0C823D"
@@ -50,7 +50,7 @@
       "color": "#0C823D"
     }
   ],
-  "fetchedAt": "2026-11-15T09:28:11.519788+00:00",
+  "fetchedAt": "2026-11-17T02:21:28.761545+00:00",
   "source": "thefoodcorridor.com",
   "listingId": "46758-clarence-creative-kitchen",
   "venuesSeen": [
